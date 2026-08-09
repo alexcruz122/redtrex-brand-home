@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedTrex Technologies | Software & IT Solutions</title>
+  <meta name="description" content="RedTrex Technologies provides genuine software licenses, cybersecurity tools, data recovery and professional IT support across Sri Lanka.">
+  <meta name="theme-color" content="#080b12">
+  <meta property="og:title" content="RedTrex Technologies | Software & IT Solutions">
+  <meta property="og:description" content="Genuine software. Practical IT solutions. Support you can count on.">
+  <meta property="og:image" content="redtrex.com.lk/Assest/company.png">
+  <link rel="icon" type="image/png" href="redtrex.com.lk/Assest/company.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080b12;
+      --bg-soft: #0d121c;
+      --panel: rgba(18, 24, 36, .78);
+      --panel-solid: #111925;
+      --line: rgba(255, 255, 255, .1);
+      --line-strong: rgba(255, 255, 255, .17);
+      --text: #f4f6fa;
+      --muted: #9aa7b8;
+      --muted-strong: #c4ccd8;
+      --red: #ef4444;
+      --red-dark: #b91c1c;
+      --red-soft: rgba(239, 68, 68, .13);
+      --green: #55d69a;
+      --yellow: #f3c969;
+      --blue: #72a9ff;
+      --max: 1180px;
+      --radius: 22px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 2%, rgba(239, 68, 68, .13), transparent 27rem),
+        radial-gradient(circle at 8% 28%, rgba(57, 104, 190, .09), transparent 23rem),
+        var(--bg);
+      font-family: "DM Sans", system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .25;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .display, h1, h2, h3, .brand-name { font-family: "Space Grotesk", sans-serif; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 16px;
+      color: #f58a8a;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: var(--red);
+    }
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 42px;
+    }
+    .section-heading h2 {
+      max-width: 650px;
+      margin: 0 0 13px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+    .section-heading p {
+      max-width: 600px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    /* Navigation */
+    .site-nav {
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid transparent;
+      transition: background .25s, border-color .25s, backdrop-filter .25s;
+    }
+    .site-nav.scrolled {
+      background: rgba(8, 11, 18, .78);
+      border-color: var(--line);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; }
+    .brand-mark {
+      width: 37px;
+      height: 37px;
+      padding: 5px;
+      border-radius: 11px;
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 8px 24px rgba(239,68,68,.24);
+    }
+    .brand-name { color: #ef4444; font-size: 1.03rem; font-weight: 700; letter-spacing: -.02em; }
+    .brand-name span { color: #fff; }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: var(--muted-strong); font-size: .88rem; }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-actions { display: flex; align-items: center; gap: 14px; }
+    .nav-login { color: var(--muted-strong); font-size: .87rem; }
+    .nav-login:hover { color: #fff; }
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      font-size: .86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .2s, background .2s, border-color .2s, box-shadow .2s;
+    }
+    .nav-cta, .button-primary {
+      color: #fff;
+      background: var(--red);
+      box-shadow: 0 9px 28px rgba(239,68,68,.19);
+    }
+    .nav-cta:hover, .button-primary:hover { background: #f05252; transform: translateY(-2px); box-shadow: 0 13px 32px rgba(239,68,68,.27); }
+    .button-secondary {
+      border-color: var(--line-strong);
+      color: var(--text);
+      background: rgba(255,255,255,.03);
+    }
+    .button-secondary:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.07); transform: translateY(-2px); }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: #fff;
+      background: rgba(255,255,255,.04);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero { position: relative; padding: 170px 0 92px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(450px, .97fr);
+      align-items: center;
+      gap: 70px;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(3.1rem, 6.4vw, 6rem);
+      line-height: .98;
+      letter-spacing: -.075em;
+    }
+    .hero h1 .accent {
+      color: #f87171;
+      background: linear-gradient(110deg, #fff 8%, #f87171 72%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-copy {
+      max-width: 570px;
+      margin: 24px 0 30px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: .79rem;
+    }
+    .hero-trust span { display: inline-flex; align-items: center; gap: 7px; }
+    .hero-trust b { color: var(--green); font-size: 1rem; }
+    .hero-visual { position: relative; min-height: 485px; }
+    .visual-glow {
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      top: 42px;
+      right: 20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(239,68,68,.28), transparent 67%);
+      filter: blur(4px);
+    }
+    .dashboard {
+      position: absolute;
+      inset: 35px 0 0 35px;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(27,36,53,.94), rgba(11,16,25,.96));
+      box-shadow: var(--shadow), 0 0 0 8px rgba(255,255,255,.018);
+      transform: rotate(2deg);
+    }
+    .dashboard::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -70px;
+      bottom: -80px;
+      border: 1px solid rgba(239,68,68,.2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(239,68,68,.035), 0 0 0 48px rgba(239,68,68,.025);
+    }
+    .dash-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 19px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .68rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .dash-dots { display: flex; gap: 5px; }
+    .dash-dots i { width: 6px; height: 6px; border-radius: 50%; background: #4b5563; }
+    .dash-dots i:first-child { background: var(--red); }
+    .dash-body { position: relative; padding: 24px; }
+    .dash-kicker { color: #f87171; font-size: .73rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .dash-title { margin: 7px 0 23px; font: 600 1.65rem/1.1 "Space Grotesk", sans-serif; letter-spacing: -.04em; }
+    .dash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .dash-card {
+      min-height: 112px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,.035);
+    }
+    .dash-card-icon {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 13px;
+      border-radius: 9px;
+      color: #fff;
+      background: var(--red-soft);
+    }
+    .dash-card:nth-child(2) .dash-card-icon { color: var(--blue); background: rgba(114,169,255,.13); }
+    .dash-card:nth-child(3) .dash-card-icon { color: var(--green); background: rgba(85,214,154,.13); }
+    .dash-card:nth-child(4) .dash-card-icon { color: var(--yellow); background: rgba(243,201,105,.13); }
+    .dash-card strong { display: block; font-size: .83rem; }
+    .dash-card small { display: block; margin-top: 3px; color: var(--muted); font-size: .69rem; }
+    .floating-badge {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: rgba(17,25,37,.92);
+      box-shadow: 0 15px 35px rgba(0,0,0,.28);
+      font-size: .72rem;
+      animation: float 5s ease-in-out infinite;
+    }
+    .floating-badge strong { display: block; font-size: .78rem; }
+    .floating-badge small { display: block; color: var(--muted); }
+    .badge-check { color: var(--green); font-size: 1.2rem; }
+    .badge-one { top: 3px; left: -7px; }
+    .badge-two { right: -20px; bottom: 14px; animation-delay: -2.1s; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    /* Trust strip */
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.018);
+    }
+    .trust-items { display: grid; grid-template-columns: repeat(5, 1fr); }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 78px;
+      padding: 12px;
+      border-right: 1px solid var(--line);
+      color: var(--muted-strong);
+      font-size: .79rem;
+      text-align: center;
+    }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item svg { flex: 0 0 auto; color: #f87171; }
+
+    /* Main sections */
+    .section { padding: 112px 0; }
+    .categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .category-card, .service-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(22,30,44,.76), rgba(13,18,28,.76));
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+    .category-card { min-height: 228px; padding: 22px; }
+    .category-card:hover, .service-card:hover { border-color: rgba(239,68,68,.44); background: linear-gradient(145deg, rgba(32,36,52,.9), rgba(16,20,30,.9)); transform: translateY(-5px); }
+    .category-card::after {
+      content: "";
+      position: absolute;
+      right: -35px;
+      bottom: -45px;
+      width: 120px;
+      height: 120px;
+      border: 1px solid rgba(239,68,68,.1);
+      border-radius: 50%;
+      box-shadow: 0 0 0 16px rgba(239,68,68,.025);
+    }
+    .category-icon, .service-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(239,68,68,.25);
+      border-radius: 13px;
+      color: #f87171;
+      background: rgba(239,68,68,.1);
+    }
+    .category-card:nth-child(2n) .category-icon { color: var(--blue); border-color: rgba(114,169,255,.25); background: rgba(114,169,255,.1); }
+    .category-card:nth-child(3n) .category-icon { color: var(--green); border-color: rgba(85,214,154,.25); background: rgba(85,214,154,.1); }
+    .category-icon img { width: 25px; height: 25px; object-fit: contain; }
+    .category-card h3, .service-card h3 { margin: 0 0 8px; font-size: 1.08rem; letter-spacing: -.03em; }
+    .category-card p, .service-card p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
+    .card-link {
+      position: absolute;
+      right: 21px;
+      bottom: 20px;
+      color: #fca5a5;
+      font-size: .76rem;
+      font-weight: 700;
+    }
+    .services-section { background: linear-gradient(180deg, transparent, rgba(255,255,255,.02), transparent); }
+    .services-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 70px; align-items: start; }
+    .services-layout .section-heading { position: sticky; top: 115px; margin-bottom: 0; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
+    .service-card { min-height: 166px; padding: 20px; }
+    .service-icon { width: 38px; height: 38px; margin-bottom: 19px; border-radius: 11px; }
+    .service-card .card-link { bottom: 18px; right: 20px; color: var(--muted-strong); }
+    .service-card:hover .card-link { color: #fca5a5; }
+
+    /* Why us */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-copy h2 { max-width: 510px; margin: 0 0 18px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; letter-spacing: -.06em; }
+    .why-copy > p { max-width: 520px; color: var(--muted); }
+    .reasons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 25px; margin: 28px 0 32px; }
+    .reason { display: flex; gap: 10px; color: var(--muted-strong); font-size: .86rem; }
+    .reason svg { flex: 0 0 auto; color: var(--green); margin-top: 3px; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .stat {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+    .stat:nth-child(2) { transform: translateY(28px); background: linear-gradient(145deg, rgba(107,35,44,.5), rgba(18,24,36,.8)); }
+    .stat:nth-child(3) { transform: translateY(-3px); }
+    .stat:nth-child(4) { transform: translateY(25px); }
+    .stat strong { display: block; margin-bottom: 6px; color: #fff; font: 700 clamp(2rem, 4vw, 3rem)/1 "Space Grotesk", sans-serif; letter-spacing: -.06em; }
+    .stat:nth-child(2) strong { color: #fca5a5; }
+    .stat p { margin: 0; color: var(--muted); font-size: .79rem; }
+
+    /* Process */
+    .process-section { padding-top: 25px; }
+    .process-wrap { border: 1px solid var(--line); border-radius: 25px; background: rgba(255,255,255,.025); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .process-step { position: relative; padding: 30px 26px; border-right: 1px solid var(--line); }
+    .process-step:last-child { border-right: 0; }
+    .step-number { color: #f87171; font: 700 .78rem "Space Grotesk", sans-serif; letter-spacing: .1em; }
+    .process-step h3 { margin: 22px 0 7px; font-size: 1rem; }
+    .process-step p { margin: 0; color: var(--muted); font-size: .79rem; }
+
+    /* Reviews */
+    .reviews-section { background: rgba(255,255,255,.018); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .review-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 225px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(18, 24, 36, .72);
+    }
+    .review-stars { color: #f3c969; font-size: .85rem; letter-spacing: .12em; }
+    .review-card blockquote {
+      flex: 1;
+      margin: 19px 0 23px;
+      color: var(--muted-strong);
+      font-size: .91rem;
+      line-height: 1.65;
+    }
+    .review-person { display: flex; align-items: center; gap: 10px; }
+    .review-avatar {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(239, 68, 68, .2);
+      font: 700 .78rem "Space Grotesk", sans-serif;
+    }
+    .review-person strong { display: block; color: #fff; font-size: .8rem; }
+    .review-person small { display: block; color: var(--muted); font-size: .7rem; }
+
+    /* Reseller callout */
+    .reseller-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 35px;
+      padding: 40px 45px;
+      border: 1px solid rgba(114,169,255,.22);
+      border-radius: 25px;
+      background: linear-gradient(110deg, rgba(24, 39, 67, .8), rgba(18, 24, 36, .72));
+    }
+    .reseller-box h2 { margin: 0 0 10px; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.08; letter-spacing: -.05em; }
+    .reseller-box p { max-width: 650px; margin: 0; color: var(--muted); font-size: .93rem; }
+    .reseller-box .button { white-space: nowrap; }
+
+    /* Partner logo marquee */
+    .partners-section { overflow: hidden; padding-top: 25px; }
+    .partners-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 30px; }
+    .partners-heading .section-heading { margin: 0; }
+    .partners-heading > p { max-width: 340px; margin: 0 0 4px; color: var(--muted); font-size: .82rem; text-align: right; }
+    .partner-window {
+      position: relative;
+      overflow: hidden;
+      width: 100vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.018);
+    }
+    .partner-window::before, .partner-window::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      width: 12%;
+      pointer-events: none;
+    }
+    .partner-window::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+    .partner-window::after { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+    .partner-track {
+      display: flex;
+      width: max-content;
+      animation: partner-scroll 34s linear infinite;
+    }
+    .partner-set {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(28px, 5vw, 72px);
+      width: 100vw;
+      flex: 0 0 100vw;
+      padding: 24px 32px;
+    }
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(120px, 14vw, 180px);
+      height: 76px;
+      flex: 0 0 clamp(120px, 14vw, 180px);
+      opacity: 1;
+      transition: opacity .2s;
+    }
+    .partner-logo:hover { opacity: .82; }
+    .partner-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 62px; object-fit: contain; }
+    .partner-logo--microsoft img { width: 92px; max-height: 68px; }
+    .partner-logo--easeus img { width: 168px; max-height: 48px; }
+    .partner-logo--square img { width: 68px; height: 68px; }
+    .partner-set[aria-hidden="true"] { pointer-events: none; }
+    @keyframes partner-scroll { to { transform: translateX(-50%); } }
+    /* CTA / Footer */
+    .cta-section { padding: 95px 0 112px; }
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 53px 58px;
+      border: 1px solid rgba(239,68,68,.34);
+      border-radius: 28px;
+      background: radial-gradient(circle at 88% 20%, rgba(239,68,68,.27), transparent 24rem), linear-gradient(110deg, #171d2b, #24141b);
+    }
+    .cta-box::before { content: ""; position: absolute; width: 260px; height: 260px; right: 25%; bottom: -210px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; box-shadow: 0 0 0 30px rgba(255,255,255,.025), 0 0 0 60px rgba(255,255,255,.018); }
+    .cta-box h2 { position: relative; max-width: 600px; margin: 0 0 10px; font-size: clamp(1.9rem, 4vw, 3.1rem); line-height: 1.05; letter-spacing: -.055em; }
+    .cta-box p { position: relative; max-width: 540px; margin: 0; color: #bdabb0; }
+    .cta-box .button { position: relative; flex: 0 0 auto; }
+    footer { border-top: 1px solid var(--line); padding: 46px 0 30px; background: rgba(0,0,0,.15); }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 45px; padding-bottom: 42px; }
+    .footer-brand p { max-width: 280px; margin: 16px 0 0; color: var(--muted); font-size: .82rem; }
+    .footer-col h3 { margin: 0 0 14px; color: #fff; font-size: .8rem; }
+    .footer-col a { display: block; width: fit-content; margin: 8px 0; color: var(--muted); font-size: .78rem; }
+    .footer-col a:hover { color: #fca5a5; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; border-top: 1px solid var(--line); color: #667385; font-size: .72rem; }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+      .partner-track { animation: none; }
+      .partner-set { width: 100vw; flex-basis: 100vw; justify-content: center; }
+      .partner-set[aria-hidden="true"] { display: none; }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links { gap: 17px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding-top: 135px; }
+      .hero-copy { max-width: 700px; }
+      .hero-visual { width: min(100%, 650px); margin: 0 auto; }
+      .categories { grid-template-columns: repeat(2, 1fr); }
+      .services-layout, .why-grid { grid-template-columns: 1fr; gap: 38px; }
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .services-layout .section-heading { position: static; }
+      .why-copy h2 { max-width: 700px; }
+      .footer-top { grid-template-columns: 1.4fr 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 30px)); }
+      .nav-inner { min-height: 68px; gap: 10px; }
+      .brand { min-width: 0; gap: 8px; }
+      .brand-mark { width: 34px; height: 34px; padding: 4px; border-radius: 10px; }
+      .brand-name { min-width: 0; font-size: .9rem; white-space: nowrap; }
+      .nav-links, .nav-actions { display: none; }
+      .menu-toggle { display: grid; place-items: center; }
+      .site-nav.open {
+        background: rgba(8, 11, 18, .72);
+        border-bottom-color: transparent;
+        backdrop-filter: blur(18px);
+      }
+      .site-nav.open .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 15px;
+        right: 15px;
+        display: grid;
+        gap: 0;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(15, 21, 31, .98);
+        box-shadow: var(--shadow);
+      }
+      .site-nav.open .nav-links a { padding: 13px 14px; border-radius: 9px; }
+      .site-nav.open .nav-links a:hover { background: rgba(255,255,255,.05); }
+      .site-nav.open .nav-actions {
+        position: absolute;
+        top: 276px;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        align-items: stretch;
+        gap: 10px;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(15, 21, 31, .98);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+      .site-nav.open .nav-login {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 14px;
+        border: 1px solid var(--line-strong);
+        border-radius: 11px;
+        color: #fff;
+        background: rgba(255, 255, 255, .06);
+      }
+      .site-nav.open .nav-login:hover { background: rgba(255, 255, 255, .11); }
+      .site-nav.open .nav-cta { flex: 1; }
+      .hero { padding: 118px 0 68px; }
+      .hero h1 { font-size: clamp(2.75rem, 14vw, 4.6rem); }
+      .hero-copy { font-size: .98rem; }
+      .hero-buttons { width: 100%; }
+      .hero-buttons .button { flex: 1 1 190px; }
+      .hero-trust { gap: 10px 15px; margin-top: 24px; }
+      /* Let the dashboard grow with its cards instead of clipping at the
+         height of the hero container on narrow screens. */
+      .hero-visual { min-height: 520px; }
+      .dashboard {
+        top: 25px;
+        right: 4px;
+        bottom: auto;
+        left: 4px;
+        min-height: 430px;
+        transform: none;
+      }
+      .badge-one { left: 0; top: 0; }
+      .badge-two { right: 0; bottom: -24px; }
+      .trust-items { grid-template-columns: repeat(2, 1fr); }
+      .trust-item { min-height: 66px; border-bottom: 1px solid var(--line); }
+      .trust-item:nth-child(2n) { border-right: 0; }
+      .trust-item:last-child { grid-column: 1 / -1; border-bottom: 0; }
+      .section { padding: 78px 0; }
+      .section-heading { margin-bottom: 28px; }
+      .categories, .service-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .category-card { min-height: 198px; }
+      .reasons { grid-template-columns: 1fr; gap: 12px; }
+      .stats { gap: 10px; }
+      .stat { padding: 18px; }
+      .stat:nth-child(2), .stat:nth-child(4) { transform: translateY(0); }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-step { min-height: 155px; padding: 22px 18px; border-bottom: 1px solid var(--line); }
+      .process-step:nth-child(2n) { border-right: 0; }
+      .process-step:nth-last-child(-n+2) { border-bottom: 0; }
+      .cta-section { padding: 60px 0 78px; }
+      .cta-box { align-items: flex-start; flex-direction: column; padding: 35px 25px; }
+      .cta-box .button { width: 100%; }
+      .reseller-box { grid-template-columns: 1fr; gap: 24px; padding: 30px 24px; }
+      .reseller-box .button { width: 100%; }
+      .partners-heading { display: block; }
+      .partners-heading > p { max-width: 500px; margin: -10px 0 24px; text-align: left; }
+      .partner-track { animation: none; }
+      .partner-set {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 18px;
+        width: 100vw;
+        flex-basis: 100vw;
+        padding: 20px 15px;
+      }
+      .partner-set[aria-hidden="true"] { display: none; }
+      .partner-logo { width: 100%; min-width: 0; height: 64px; }
+      .partner-logo--microsoft img { width: 78px; max-height: 58px; }
+      .partner-logo--easeus img { width: 124px; max-height: 40px; }
+      .partner-logo--square img { width: 56px; height: 56px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; gap: 7px; }
+    }
+    @media (max-width: 390px) {
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .button { width: 100%; flex: 1 1 auto; }
+      .hero-trust { display: grid; grid-template-columns: 1fr 1fr; }
+      .hero-trust span:last-child { grid-column: 1 / -1; }
+      .hero-visual { min-height: 510px; }
+      .dash-body { padding: 18px; }
+      .dash-title { font-size: 1.35rem; }
+      .dash-card { min-height: 100px; padding: 12px; }
+      .floating-badge { transform: scale(.9); transform-origin: left center; }
+      .badge-two { bottom: -22px; transform-origin: right center; }
+    }
+    @media (max-width: 350px) {
+      .container { width: calc(100% - 24px); }
+      .brand-name { font-size: .82rem; }
+      .brand-mark { width: 31px; height: 31px; }
+      .hero { padding-top: 108px; }
+      .hero h1 { font-size: 2.65rem; }
+      .hero-visual { min-height: 475px; }
+      .dashboard {
+        top: 28px;
+        right: 0;
+        bottom: auto;
+        left: 0;
+        min-height: 400px;
+      }
+      .dash-body { padding: 15px; }
+      .dash-card { min-height: 92px; padding: 10px; }
+      .dash-card strong { font-size: .75rem; }
+      .dash-card small { font-size: .62rem; }
+      .floating-badge { padding: 9px 10px; font-size: .66rem; }
+      .floating-badge strong { font-size: .7rem; }
+      .floating-badge small { font-size: .62rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a class="brand" href="homepage.html" aria-label="RedTrex Technologies home">
+        <img class="brand-mark" src="Assest/company.png" alt="RedTrex Technologies logo">
+        <span class="brand-name">RedTrex <span>Technologies</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#what-we-sell">What we sell</a>
+        <a href="#services">Services</a>
+        <a href="#why-redtrex">Why RedTrex</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#partners">Partners</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-login" href="login.html">Account</a>
+        <a class="nav-cta" href="index.html">Browse store</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy-wrap reveal">
+          <p class="eyebrow">Your technology partner in Sri Lanka</p>
+          <h1>Software that works. <span class="accent">Support that stays.</span></h1>
+          <p class="hero-copy">We make technology easier to buy, set up and keep running from genuine software licenses to practical IT support for homes and businesses.</p>
+          <div class="hero-buttons">
+            <a class="button button-primary" href="index.html">Explore the store</a>
+            <a class="button button-secondary" href="contact.html">Talk to an expert</a>
+          </div>
+          <div class="hero-trust" aria-label="Our commitments">
+            <span><b>✓</b> Genuine products</span>
+            <span><b>✓</b> Fast delivery</span>
+            <span><b>✓</b> Local support</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="visual-glow"></div>
+          <div class="floating-badge badge-one">
+            <span class="badge-check">✓</span>
+            <span><strong>Ready to activate</strong><small>Delivered to your inbox</small></span>
+          </div>
+          <div class="dashboard" aria-label="RedTrex technology overview">
+            <div class="dash-top">
+              <span></span>
+              <span class="dash-dots"><i></i><i></i><i></i></span>
+            </div>
+            <div class="dash-body">
+              <div class="dash-kicker">Technology, simplified</div>
+              <div class="dash-title">Everything your setup needs.</div>
+              <div class="dash-grid">
+                <div class="dash-card">
+                  <div class="dash-card-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></div>
+                  <strong>Windows</strong><small>Secure, genuine licenses</small>
+                </div>
+                <div class="dash-card">
+                  <div class="dash-card-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+                  <strong>Office</strong><small>Work smarter every day</small>
+                </div>
+                <div class="dash-card">
+                  <div class="dash-card-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 1 1 .5-7.97A5.5 5.5 0 0 1 18 12.5a3.5 3.5 0 0 1-.5 6.98H7Z"/></svg></div>
+                  <strong>Data recovery</strong><small>Get important files back</small>
+                </div>
+                <div class="dash-card">
+                  <div class="dash-card-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 5 6v5c0 4.7 3 8.5 7 10 4-1.5 7-5.3 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                  <strong>IT support</strong><small>People who solve problems</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-badge badge-two">
+            <span class="badge-check">◉</span>
+            <span><strong>Human support</strong><small>When you need it most</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="RedTrex benefits">
+      <div class="container trust-items">
+        <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 5 6v5c0 4.7 3 8.5 7 10 4-1.5 7-5.3 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>Genuine software</div>
+        <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>Fast digital delivery</div>
+        <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>Secure payments</div>
+        <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11a8.1 8.1 0 0 1-8 8 8.1 8.1 0 0 1-8-8 8.1 8.1 0 0 1 8-8 8.1 8.1 0 0 1 8 8Z"/><path d="M4 12h16M12 3c2 2.2 3 5.2 3 8s-1 5.8-3 8c-2-2.2-3-5.2-3-8s1-5.8 3-8Z"/></svg>Activation guidance</div>
+        <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 20a5 5 0 0 0-10 0M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 20a4 4 0 0 0-3-3.87M16 4.13A4 4 0 0 1 16 12"/></svg>Support for people & teams</div>
+      </div>
+    </section>
+
+    <section class="section" id="what-we-sell">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">The store</p>
+          <h2>Tools for the way you work.</h2>
+          <p>Choose from trusted software categories for everyday productivity, creative work, security and business operations.</p>
+        </div>
+        <div class="categories">
+          <a class="category-card reveal" href="index.html#products-os-keys">
+            <div class="category-icon"><img src="category-icons/windows.png" alt="Windows icon" loading="lazy" decoding="async"></div>
+            <h3>Windows</h3><p>Reliable operating systems for home, study and work.</p><span class="card-link">Browse category</span>
+          </a>
+          <a class="category-card reveal" href="index.html#products-software-keys">
+            <div class="category-icon"><img src="category-icons/office.png" alt="Microsoft Office icon" loading="lazy" decoding="async"></div>
+            <h3>Microsoft Office</h3><p>Essential apps to write, calculate, present and create.</p><span class="card-link">Browse category</span>
+          </a>
+          <a class="category-card reveal" href="index.html#products-software-keys">
+            <div class="category-icon"><img src="category-icons/microsoft-365.png" alt="Microsoft 365 icon" loading="lazy" decoding="async"></div>
+            <h3>Microsoft 365</h3><p>Connected productivity with cloud storage and collaboration.</p><span class="card-link">Browse category</span>
+          </a>
+          <a class="category-card reveal" href="index.html#products-os-keys">
+            <div class="category-icon"><img src="category-icons/windows-server.png" alt="Windows Server icon" loading="lazy" decoding="async"></div>
+            <h3>Windows Server</h3><p>Infrastructure software for growing organizations.</p><span class="card-link">Browse category</span>
+          </a>
+          <a class="category-card reveal" href="index.html#products-software-keys">
+            <div class="category-icon"><img src="category-icons/project-visio.png" alt="Project and Visio icon" loading="lazy" decoding="async"></div>
+            <h3>Project & Visio</h3><p>Plan clearly, visualize ideas and manage projects.</p><span class="card-link">Browse category</span>
+          </a>
+          <a class="category-card reveal" href="index.html#section-easeus">
+            <div class="category-icon"><img src="category-icons/easeus.png" alt="EaseUS icon" loading="lazy" decoding="async"></div>
+            <h3>EaseUS</h3><p>Recovery, backup and partition tools that protect your data.</p><span class="card-link">Browse category</span>
+          </a>
+
+          <a class="category-card reveal" href="https://redtrex.com.lk/contact">
+            <div class="category-icon"><img src="partnerlogos/adobe.webp" alt="Adobe icon" loading="lazy" decoding="async"></div>
+            <h3>Adobe</h3><p>Professional creative and productivity solutions for design, PDF, video, and business workflows.</p><span class="card-link">Contact Sale</span>
+          </a>
+          
+          <a class="category-card reveal" href="https://redtrex.com.lk/contact">
+            <div class="category-icon"><img src="category-icons/wondershare.png" alt="Wondershare icon" loading="lazy" decoding="async"></div>
+            <h3>Wondershare</h3><p>Useful tools for documents, media and creative projects.</p><span class="card-link">Contact Sale</span>
+          </a>
+          <a class="category-card reveal" href="index.html#section-virusguard">
+            <div class="category-icon"><img src="category-icons/security.png" alt="Security software icon" loading="lazy" decoding="async"></div>
+            <h3>Security software</h3><p>Protect devices, accounts and the work that matters.</p><span class="card-link">Browse category</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="container services-layout">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Beyond the download</p>
+          <h2>When technology gets difficult, we help.</h2>
+          <p>Our team brings practical, friendly support to the problems that slow you down — at home, remotely or across your business.</p>
+          <a class="button button-secondary" href="services.html" style="margin-top:27px">See all services</a>
+        </div>
+        <div class="service-grid">
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Laptop repair</h3><p>Diagnosis, upgrades and repairs to keep your laptop dependable.</p><span class="card-link">Get help </span></a>
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h3>Desktop support</h3><p>Hardware troubleshooting and setup for home or office desktops.</p><span class="card-link">Get help </span></a>
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 1 1 .5-7.97A5.5 5.5 0 0 1 18 12.5a3.5 3.5 0 0 1-.5 6.98H7Z"/><path d="M12 11v5M10 14h4"/></svg></div><h3>Data recovery</h3><p>Careful recovery guidance when important files disappear.</p><span class="card-link">Get help </span></a>
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 5 6v5c0 4.7 3 8.5 7 10 4-1.5 7-5.3 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Virus removal</h3><p>Clean up infections and improve the safety of your devices.</p><span class="card-link">Get help</span></a>
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H4z"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Windows installation</h3><p>Fresh installations, setup and activation without the confusion.</p><span class="card-link">Get help</span></a>
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Office installation</h3><p>Get your productivity tools installed and ready to use.</p><span class="card-link">Get help</span></a>
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v12H4z"/><path d="m8 21 2-4M16 21l-2-4M9 10h.01M12 10h.01M15 10h.01"/></svg></div><h3>Remote technical support</h3><p>Fast, clear assistance when you need an expert on the screen.</p><span class="card-link">Get help</span></a>
+          <a class="service-card reveal" href="request-service.html"><div class="service-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20a6 6 0 0 1 12 0M10 20a6 6 0 0 1 12 0"/></svg></div><h3>Business IT support</h3><p>Practical help for teams that need technology to keep moving.</p><span class="card-link">Get help </span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-redtrex">
+      <div class="container why-grid">
+        <div class="why-copy reveal">
+          <p class="eyebrow">Why RedTrex</p>
+          <h2>A better way to get technology sorted.</h2>
+          <p>We combine genuine products with real human support. That means fewer confusing purchases, safer setups and someone to ask when you need a straight answer.</p>
+          <div class="reasons">
+            <div class="reason"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Genuine software and clear guidance</div>
+            <div class="reason"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Fast digital delivery</div>
+            <div class="reason"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Secure payment options</div>
+            <div class="reason"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Support after your purchase</div>
+            <div class="reason"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Solutions for homes and teams</div>
+            <div class="reason"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Local team, practical advice</div>
+          </div>
+          <a class="button button-primary" href="about.html">Meet RedTrex</a>
+        </div>
+        <div class="stats reveal" aria-label="RedTrex highlights">
+          <div class="stat"><strong>8+</strong><p>Software categories</p></div>
+          <div class="stat"><strong>24/7</strong><p>Order access online</p></div>
+          <div class="stat"><strong>1:1</strong><p>Helpful technical guidance</p></div>
+          <div class="stat"><strong>Global</strong><p>Solutions for customers worldwide</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container process-section" id="how-it-works">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Simple from start to finish</p>
+        <h2>Get what you need, without the runaround.</h2>
+      </div>
+      <div class="process-wrap reveal">
+        <div class="process-grid">
+          <div class="process-step"><span class="step-number">01 / CHOOSE</span><h3>Find your solution</h3><p>Browse products or tell us what needs fixing.</p></div>
+          <div class="process-step"><span class="step-number">02 / ORDER</span><h3>Checkout securely</h3><p>Use a payment option that works for you.</p></div>
+          <div class="process-step"><span class="step-number">03 / RECEIVE</span><h3>Get it fast</h3><p>Digital products arrive by email, ready to use.</p></div>
+          <div class="process-step"><span class="step-number">04 / RELY</span><h3>Keep moving</h3><p>Reach out when you need setup or support.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container cta-section">
+      <div class="cta-box reveal">
+        <div><p class="eyebrow">Let’s make technology easier</p><h2>Ready to get your setup sorted?</h2><p>Browse genuine software or speak with our team about the right solution for you.</p></div>
+        <a class="button button-primary" href="index.html">Browse the store</a>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Customer feedback</p>
+          <h2>Good technology should feel straightforward.</h2>
+          <p>A few things customers value when they work with RedTrex.</p>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card reveal">
+            <div class="review-stars" aria-label="5 out of 5 stars on Google">★★★★★</div>
+            <blockquote>“Excellent Service! I reached out for Office 2024 Pro. Nice price and great support. Totally recommend..Will be buying in future for sure”</blockquote>
+            <div class="review-person"><span class="review-avatar">l</span><span><strong>lijzchrnz.</strong><small>Software customer</small></span></div>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-label="5 out of 5 stars on Trustpilot">★★★★★</div>
+            <blockquote>“Great customer service and the product is working as expected so far.”</blockquote>
+            <div class="review-person"><span class="review-avatar">MA</span><span><strong>Martha.</strong><small>Software customer</small></span></div>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-label="5 out of 5 stars on Trustpilot">★★★★★</div>
+            <blockquote>“Bought Windows Standard Server 2025. Quick Service. Reasonable. Got what I need. Recommended.”</blockquote>
+            <div class="review-person"><span class="review-avatar">RE</span><span><strong>Rezo.</strong><small>Business customer</small></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reseller">
+      <div class="container">
+        <div class="reseller-box reveal">
+          <div>
+            <p class="eyebrow">Work with RedTrex</p>
+            <h2>Build your software business with us.</h2>
+            <p>Are you a repair shop, IT consultant or technology seller? Apply to become a RedTrex reseller and offer genuine software with dependable support behind you.</p>
+          </div>
+          <a class="button button-primary" href="reseller.html">Apply for reseller</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners-section" id="partners">
+      <div class="container">
+        <div class="partners-heading reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Our partners</p>
+            <h2>Products and support from trusted names.</h2>
+          </div>
+          <p>We work with established technology brands to help customers choose solutions they can rely on.</p>
+        </div>
+      </div>
+      <div class="partner-window" aria-label="RedTrex partners">
+        <div class="partner-track">
+          <div class="partner-set">
+            <span class="partner-logo partner-logo--microsoft"><img src="partnerlogos/microsoft.webp" alt="Microsoft partner"></span>
+            <span class="partner-logo partner-logo--easeus"><img src="partnerlogos/easeus.webp" alt="EaseUS partner"></span>
+            <span class="partner-logo partner-logo--square"><img src="partnerlogos/adobe.webp" alt="Adobe partner"></span>
+            <span class="partner-logo partner-logo--square"><img src="partnerlogos/wondershare.avif" alt="Wondershare partner"></span>
+          </div>
+          <div class="partner-set" aria-hidden="true">
+            <span class="partner-logo partner-logo--microsoft"><img src="Assest/partnerlogos/microsoft.webp" alt=""></span>
+            <span class="partner-logo partner-logo--easeus"><img src="partnerlogos/easeus.webp" alt=""></span>
+            <span class="partner-logo partner-logo--square"><img src="partnerlogos/adobe.webp" alt=""></span>
+            <span class="partner-logo partner-logo--square"><img src="partnerlogos/wondershare.avif" alt=""></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="homepage.html"><img class="brand-mark" src="redtrex.com.lk/Assest/company.png" alt="RedTrex Technologies logo"><span class="brand-name">RedTrex <span>Technologies</span></span></a>
+          <p>Genuine software, practical IT solutions and human support for homes and businesses in Sri Lanka.</p>
+        </div>
+        <div class="footer-col"><h3>Explore</h3><a href="#what-we-sell">What we sell</a><a href="#services">Our services</a><a href="#reviews">Customer feedback</a><a href="about.html">About us</a></div>
+        <div class="footer-col"><h3>Support</h3><a href="contact.html">Contact us</a><a href="request-service.html">Request a service</a><a href="faq.html">FAQs</a><a href="login.html">My account</a></div>
+        <div class="footer-col"><h3>Visit the store</h3><a href="index.html">Shop software</a><a href="#reseller">Become a reseller</a><a href="track-order.html">Track an order</a><a href="mailto:support@redtrex.com.lk">Email support</a></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> RedTrex Technologies. All rights reserved.</span><span>Made for better technology days.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const nav = document.getElementById("siteNav");
+      const menu = document.getElementById("menuToggle");
+      const links = document.querySelectorAll("#navLinks a");
+      const updateNav = () => nav.classList.toggle("scrolled", window.scrollY > 18);
+      updateNav();
+      window.addEventListener("scroll", updateNav, { passive: true });
+      menu.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        menu.setAttribute("aria-expanded", String(open));
+        menu.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+      links.forEach(link => link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menu.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-label", "Open menu");
+      }));
+
+      const items = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12 });
+        items.forEach(item => observer.observe(item));
+      } else {
+        items.forEach(item => item.classList.add("visible"));
+      }
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
